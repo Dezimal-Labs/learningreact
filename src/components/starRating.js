@@ -20,7 +20,7 @@ import Star from "./star";
 // }
 
 
-const createArray = (length) => [...Array(length)];
+//const createArray = (length) => [...Array(length)];
 //static color set
 // export default function StarRating({ totalStars = 5, style }) {
 //     return (<div style={style}>
@@ -63,7 +63,7 @@ const createArray = (length) => [...Array(length)];
 //     </div>)
 // }
 
-
+const createArray = (length) => [...Array(length)];
 export default function StarRating({ totalStars, style }) {
     const [selectStars, setSelectedStars] = useState(3);
 
