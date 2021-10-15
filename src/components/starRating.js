@@ -64,20 +64,40 @@ import Star from "./star";
 // }
 
 const createArray = (length) => [...Array(length)];
-export default function StarRating({ totalStars, style }) {
-    const [selectStars, setSelectedStars] = useState(3);
+// export default function StarRating({ totalStars, selectedStars }) {
+//     const [selectStars, setSelectedStars] = useState(3);
 
-    return (<div style={{ padding: "20px", ...style }}>
+//     return (<div style={{ padding: "20px" }}>
+
+//         {
+//             createArray(totalStars).map((n, i) => <Star key={i} selected={selectedStars > i} onSelect={() => setSelectedStars(i + 1)} />)
+//         }
+//         <p>
+//             {selectedStars} of {totalStars}
+//         </p>
+//     </div>
+
+//     )
+
+// }
+
+
+export default function StarRating({ totalStars = 5, selectedStars = 0 }) {
+    
+
+    return (<>
 
         {
-            createArray(totalStars).map((n, i) => <Star key={i} selected={selectStars > i} onSelect={() => setSelectedStars(i + 1)} />)
+            createArray(totalStars).map((n, i) => <Star key={i} selected={selectedStars > i} />)
         }
         <p>
-            {selectStars} of {totalStars}
+            {selectedStars} of {totalStars} stars
         </p>
-    </div>
+
+    </>
 
     )
 
 }
+
 

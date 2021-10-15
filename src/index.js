@@ -3,14 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-import StarRating from './components1/starRating.js';
+import StarRating from './components/starRating.js';
+import ColorApp from './components/colorApp';
+
 
 const star=5;
 
 ReactDOM.render(
   <React.StrictMode>
    {/* <StarRating totalStars={star}/> */}
-   <StarRating totalStars={star} style={{backgroundColor:"lightblue"}}/>
+   <ColorApp />
+   
   </React.StrictMode>,
   document.getElementById('root')
 );
