@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-import StarRating from './components/starRating.js';
+import StarRating from './components1/starRating.js';
 
 const star=5;
 

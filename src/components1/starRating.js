@@ -63,21 +63,35 @@ import Star from "./star";
 //     </div>)
 // }
 
+// const createArray = (length) => [...Array(length)];
+// export default function StarRating({ totalStars, style }) {
+//     const [selectStars, setSelectedStars] = useState(3);
+
+//     return (<div style={{ padding: "20px", ...style }}>
+
+//         {
+//             createArray(totalStars).map((n, i) => <Star key={i} selected={selectStars > i} onSelect={() => setSelectedStars(i + 1)} />)
+//         }
+//         <p>
+//             {selectStars} of {totalStars}
+//         </p>
+//     </div>
+//     )
+// }
+
+
 const createArray = (length) => [...Array(length)];
 export default function StarRating({ totalStars, style }) {
     const [selectStars, setSelectedStars] = useState(3);
+    return ( <div style={{ padding: "20px", ...style }} >
+            {
+                createArray(totalStars).map((n, i) => <Star key={i} selected={selectStars > i} onSelect={() => setSelectedStars(i+1)} />)
+            }
+            <p>
+                {selectStars} of {totalStars}
+            </p>
 
-    return (<div style={{ padding: "20px", ...style }}>
-
-        {
-            createArray(totalStars).map((n, i) => <Star key={i} selected={selectStars > i} onSelect={() => setSelectedStars(i + 1)} />)
-        }
-        <p>
-            {selectStars} of {totalStars}
-        </p>
-    </div>
-
+        </ div>
     )
-
 }
 
