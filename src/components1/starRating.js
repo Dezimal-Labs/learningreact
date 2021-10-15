@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Star from "./star";
-
+//C:\Program Files (x86)\Bitrix24\BDisk
 // export default function StarRating() {
 //     return [
 //         <FaStar color="red" />,
