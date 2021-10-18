@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useInput } from "./useInputHook";
+import { useInput } from "../hooks/useInputHook";
 
 export default function AddColorForm({ onNewColor = f => f }) {
     const [titleProps, resetTitle] = useInput("");

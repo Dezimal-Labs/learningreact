@@ -4,39 +4,27 @@ import ColorList from './colorList.js'
 import colorData from '../data/color-data.json'
 import AddColorForm from './colorForm.js';
 import { v4 } from "uuid";
+import UseColorHook from '../hooks/useColorHook.js';
+import useColorHook from '../hooks/useColorHook.js';
 
 export default function ColorApp() {
 
-    const [colors, setColors] = useState(colorData);
+    const [colors, onAddColor, onRateColor, onRemoveColor] =useColorHook();
 
     return (
         <>
             <AddColorForm
                 onNewColor={(title, color) => {
-                    const newColors = [
-                        ...colors,
-                        {
-                            id: v4(),
-                            rating: 0,
-                            title,
-                            color
-                        }
-                    ];
-                    setColors(newColors);
+                    onAddColor(title, color);
                 }}
             />
 
             <ColorList colors={colors}
             onRateColor={(id, rating) => {
-                const newColors = colors.map(color =>
-                color.id === id ? { ...color, rating } : color
-                );
-                setColors(newColors);
-                }}
-                
-                onRemoveColor={(id) => {
-                    const newColors = colors.filter((c) => c.id !== id)
-                    setColors(newColors);
+                onRateColor(id, rating);
+            }}
+            onRemoveColor={(id) => {
+                    onRemoveColor(id);
                 }} />
         </>
     )
