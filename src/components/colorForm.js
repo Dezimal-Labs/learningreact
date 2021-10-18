@@ -24,6 +24,7 @@ export default function AddColorForm({ onNewColor = f => f }) {
         required
         />
         <input {...colorProps} type="color" required />
+        
         <button>ADD</button>
         </form>
         );
