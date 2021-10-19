@@ -5,21 +5,24 @@ import App from './App';
 
 import StarRating from './components/starRating.js';
 import ColorApp from './components/colorApp';
+import { ColorProvider } from './hooks/colorProvider';
 
 
-const star=5;
+const star = 5;
 
 ReactDOM.render(
   <React.StrictMode>
-   {/* <StarRating totalStars={star}/> */}
-   <ColorApp />
-   
+    {/* <StarRating totalStars={star}/> */}
+    {/* <ColorProvider>
+      <ColorApp />
+    </ColorProvider> */}
+    <App></App>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
 // ReactDOM.render(
-  
+
 //   <StarRating/>
 // ,
 //   document.getElementById('root')

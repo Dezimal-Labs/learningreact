@@ -1,9 +1,16 @@
 import colorData from '../data/color-data.json';
-import { useState } from 'react';
+import { useState, useContext, createContext } from 'react';
 import { v4 } from 'uuid';
 
+//Create Provider
+const ColorContext = createContext();
 
-const useColorHook = () => {
+//Context for retrieving values
+const useColors = () => useContext(ColorContext)
+
+
+
+const ColorProvider = ({ children }) => {
     const [colors, setColors] = useState(colorData);
 
     //Add color
@@ -34,7 +41,11 @@ const useColorHook = () => {
         setColors(newColors);
     }
 
-    return [colors, onAddColor, onRateColor, onRemoveColor];
+    return (
+        <ColorContext.Provider value={{ colors, onAddColor, onRateColor, onRemoveColor }}>
+            {children}
+        </ColorContext.Provider>
+    )
 }
 
-export default useColorHook;
+export { ColorProvider, useColors };
