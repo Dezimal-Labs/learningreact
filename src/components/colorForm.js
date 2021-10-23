@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useInput } from "../hooks/useInputHook";
 
 export default function AddColorForm({ onNewColor = f => f }) {
-    const [titleProps, resetTitle] = 3("");
+    const [titleProps, resetTitle] = ("");
     const [colorProps, resetColor] = useInput("#000000");
 
 

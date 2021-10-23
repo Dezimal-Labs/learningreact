@@ -6,6 +6,7 @@ import App from './App';
 import StarRating from './components/starRating.js';
 import ColorApp from './components/colorApp';
 import { ColorProvider } from './hooks/colorProvider';
+import simpleRedux from './components/simpleRedux';
 
 
 const star = 5;
@@ -17,6 +18,7 @@ ReactDOM.render(
       <ColorApp />
     </ColorProvider> */}
     <App></App>
+    {/* <simpleRedux /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
