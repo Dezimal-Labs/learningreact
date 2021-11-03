@@ -1,11 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import simpleReduxHook from '../hooks/simpleReduxHook';
 
 
 
-export default function SimpleRedux() {
 
-    const { OnIncrement, OnDecrement, getState}=simpleReduxHook();
+export default function SimpleRedux() {
+    const state = useSelector(state => state)
+    const { OnIncrement, OnDecrement}=simpleReduxHook();
     return (
         <>
         <div>
@@ -17,7 +19,7 @@ export default function SimpleRedux() {
             <button onClick={OnDecrement}>Decrement</button>
             </div>
             <p>
-                {getState}
+                {state}
             </p>
         </div>
         </>

@@ -7,19 +7,48 @@ import StarRating from './components/starRating.js';
 import ColorApp from './components/colorApp';
 import { ColorProvider } from './hooks/colorProvider';
 import simpleRedux from './components/simpleRedux';
-
+import store from './store/store';
+import  store1     from './store/incrementStore'
+import { Provider } from 'react-redux';
+import SimpleRedux from './components/simpleRedux';
+import Increment from './components/increment';
 
 const star = 5;
 
+// ReactDOM.render(
+//   // <React.StrictMode>
+//   //   {/* <StarRating totalStars={star}/> */}
+//   //   {/* <ColorProvider>
+//   //     <ColorApp />
+//   //   </ColorProvider> */}
+//   //   {/* <App></App> */}
+//   //   {/* <simpleRedux /> */}
+//   // </React.StrictMode>,
+
+  
+//   document.getElementById('root')
+// );
+
+// ReactDOM.render(
+//   <Provider store={store}>
+//   <React.StrictMode>
+//   <SimpleRedux></SimpleRedux>
+//   </React.StrictMode>
+//   </Provider>,
+
+  
+//   document.getElementById('root')
+// );
+
 ReactDOM.render(
+  <Provider store={store1}>
   <React.StrictMode>
-    {/* <StarRating totalStars={star}/> */}
-    {/* <ColorProvider>
-      <ColorApp />
-    </ColorProvider> */}
-    <App></App>
-    {/* <simpleRedux /> */}
-  </React.StrictMode>,
+  <Increment></Increment>
+  </React.StrictMode>
+  </Provider>
+  ,
+
+  
   document.getElementById('root')
 );
 
