@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 
-import StarRating from './components/starRating.js';
-import ColorApp from './components/colorApp';
-import { ColorProvider } from './hooks/colorProvider';
-import simpleRedux from './components/simpleRedux';
-import store from './store/store';
-import  store1     from './store/incrementStore'
+// import StarRating from './components/starRating.js';
+// import ColorApp from './components/colorApp';
+// import { ColorProvider } from './hooks/colorProvider';
+// import simpleRedux from './components/simpleRedux';
+// import store from './store/store';
+// import  store1     from './store/incrementStore'
+import  store2     from './store/incrementThunkStore'
 import { Provider } from 'react-redux';
-import SimpleRedux from './components/simpleRedux';
-import Increment from './components/increment';
+// import SimpleRedux from './components/simpleRedux';
+// import Increment from './components/increment';
+import IncrementThunkcomp from './components/incrementthunk';
 
 const star = 5;
 
@@ -40,10 +42,23 @@ const star = 5;
 //   document.getElementById('root')
 // );
 
+// ReactDOM.render(
+//   <Provider store={store1}>
+//   <React.StrictMode>
+//   <Increment></Increment>
+//   </React.StrictMode>
+//   </Provider>
+//   ,
+
+  
+//   document.getElementById('root')
+// );
+
+
 ReactDOM.render(
-  <Provider store={store1}>
+  <Provider store={store2}>
   <React.StrictMode>
-  <Increment></Increment>
+  <IncrementThunkcomp></IncrementThunkcomp>
   </React.StrictMode>
   </Provider>
   ,
@@ -51,6 +66,7 @@ ReactDOM.render(
   
   document.getElementById('root')
 );
+
 
 // ReactDOM.render(
 
